@@ -410,4 +410,14 @@ You can read the file into a string using `uiop:read-file-string`:
 
 # Macros
 
+As an example, Common Lisp has no `while` loop, rather, there's a `loop` macro directive for
+iterating while a conditionis true
 
+For brevity, we can define:
+
+```commonlisp
+(defmacro while (condition &body body)
+    `(loop while ,condition do (progn ,@body)))
+```
+
+[Pick up here](https://lisp-lang.org/learn/macros)
